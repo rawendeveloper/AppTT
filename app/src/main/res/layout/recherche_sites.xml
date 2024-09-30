@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    tools:context=".RechercheSites">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/error_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_appbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.025"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"
+        />
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.058"/>
+
+    <ImageView
+        android:id="@+id/return_row"
+        android:layout_width="35sp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/return_row"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_appbar"
+        app:tint="@color/blueTT" />
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Recherche de sites"
+        app:layout_constraintStart_toEndOf="@id/return_row"
+        app:layout_constraintTop_toBottomOf="@id/guide_appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/blueTT" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropDownMenu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:hintTextColor="@color/blueTT"
+        android:layout_marginHorizontal="8dp"
+        app:endIconTint="@color/blueTT"
+        app:layout_constraintTop_toBottomOf="@id/guide_search"
+        app:layout_constraintStart_toEndOf="@id/guide_vertical"
+        app:layout_constraintBottom_toTopOf="@id/recycler_view"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/blueTT"
+        app:hintEnabled="false"
+        android:textColorHint="@color/blueTT"
+        app:hintAnimationEnabled="false"
+        app:helperTextEnabled="false"
+        app:expandedHintEnabled="false"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:hint="Type"
+        app:boxStrokeColor="@color/blueTT">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/type_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:drawablePadding="12dp"
+            android:inputType="none"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/blueTT"
+            android:hint="Type"
+            android:textSize="14sp"
+            tools:ignore="LabelFor" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/search_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Recherche un site .."
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintTop_toBottomOf="@id/guide_search"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="14sp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toStartOf="@id/guide_vertical"
+        android:drawableStart="@drawable/ic_search"
+        android:textColor="@color/blueTT"
+        android:textColorHint="@color/blueTT"
+        android:backgroundTint="@color/blueTT"
+        android:drawableTint="@color/blueTT"
+        android:layout_marginStart="16dp"
+        android:drawablePadding="8dp"
+        tools:ignore="RtlSymmetry" />
+
+
+
+
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+
+    <TextView
+        android:id="@+id/no_result_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pas des sites pour le moments !"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/error_guide"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:animateLayoutChanges="true"
+        android:textColor="@color/text_red"
+        android:layout_marginTop="16dp"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

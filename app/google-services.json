@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "909682863327",
+    "project_id": "tt-gafsa",
+    "storage_bucket": "tt-gafsa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909682863327:android:0fca1881f00d1bd00bcd6a",
+        "android_client_info": {
+          "package_name": "com.example.ttgafsa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvJOImNXh6k4huAxkbpiR1KLK1jyAK1kA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

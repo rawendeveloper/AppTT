@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="318dp"
+    android:layout_height="245dp"
+    android:layout_gravity="center"
+    app:cardCornerRadius="8dp"
+    android:animateLayoutChanges="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/main_orange"
+        android:padding="16dp"
+        android:animateLayoutChanges="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/errorLogo"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            android:scaleType="center"
+            app:lottie_autoPlay="true"
+            />
+
+
+        <TextView
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="you're offline please check your network connection !"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/retry_btn"
+            android:layout_width="126dp"
+            android:layout_height="38dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:animateLayoutChanges="true"
+            android:layout_marginTop="26dp"
+            android:elevation="0dp">
+
+            <!-- android:background="@drawable/sign_btn_selector" -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="REESSAYER"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
